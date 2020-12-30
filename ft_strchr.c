@@ -3,12 +3,12 @@ char *ft_strchr(const char *s, int c)
 	char *d;
    
 	d = (char *)s;
-	while (*d)
+	while (*d != c)
 	{
-		if(*d == c)
-			return (d);
+		if(*d == '\0')
+			return (0);
 		d++;
 	}
-	return (NULL);
+	return (d);
 }
 

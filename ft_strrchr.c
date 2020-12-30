@@ -1,16 +1,18 @@
 char *ft_strrchr(const char *s, int c)
 {
-    char *d;
-	char *t;
+	char *str;
+	char *an;
 
-	d = (char *)s;
-    t = NULL;
-	while (*d)
+	str = (char *)s;
+	an = NULL;
+	while (*str)
     {
-        if (*d == c)
-            t = d;
-        d++;
+        if (*str == (char)c)
+            an = str;
+        str++;
     }
-    return (t);
+	if (*str == c)
+		return (str);
+	return (an);
 }
 
