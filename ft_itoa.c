@@ -30,5 +30,6 @@ char *ft_itoa(int n)
 	num = n;
 	if (!(str = malloc(sizeof(char))))
 		return (NULL);
-	if (num)
+	//if (num)
+	return (NULL);
 }
