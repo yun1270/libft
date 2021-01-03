@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <stdio.h>
 
 int count(int n)
 {
@@ -7,12 +8,14 @@ int count(int n)
 
 	i = 0;
 	num = n;
-	if (num < 0)
+	if (n == 0)
+		return (1);
+	if (n < 0)
 	{
-		num *= -1;
+		num *= (-1);
 		i++;
 	}
-	while (num > 0)
+	while (num != 0)
 	{
 		num /= 10;
 		i++;
@@ -30,6 +33,19 @@ char *ft_itoa(int n)
 	num = n;
 	if (!(str = malloc(sizeof(char))))
 		return (NULL);
-	//if (num)
-	return (NULL);
+	str[i] = '\0';
+	if (n < 0)
+	{
+		str[0] = '-';
+		num *= (-1);
+	}
+	while (i-- >= 0)
+	{
+		if (i == 0 && str[0] == '-')
+			break;
+		str[i] = (num % 10) + '0';
+		num /= 10;
+	}
+	return (str);
 }
+
