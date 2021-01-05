@@ -10,3 +10,12 @@ char **ft_split(char const *s, char c)
 	str[1][0] = c;
 	return (str);
 }
+
+int main()
+{
+	char s[] = "hello my frined";
+	char c = ' ';
+
+
+	return 0;
+}
