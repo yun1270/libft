@@ -1,4 +1,16 @@
-int is_space(char ch)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/07 14:46:29 by yujung            #+#    #+#             */
+/*   Updated: 2021/01/07 14:46:35 by yujung           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	is_space(char ch)
 {
 	if (ch == ' ' || ch == '\t' || ch == '\n'
 			|| ch == '\v' || ch == '\f' || ch == '\r')
@@ -6,11 +18,11 @@ int is_space(char ch)
 	return (0);
 }
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	unsigned int ans;
-	int sign;
-	char *s;
+	unsigned int	ans;
+	int				sign;
+	char			*s;
 
 	ans = 0;
 	sign = 1;
@@ -28,9 +40,8 @@ int ft_atoi(const char *str)
 		if ('0' <= *s && *s <= '9')
 			ans = ans * 10 + (*s - '0');
 		else
-			break;
+			break ;
 		s++;
 	}
 	return (sign * ans);
 }
-

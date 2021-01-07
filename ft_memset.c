@@ -1,9 +1,23 @@
-void *ft_memset(void *b, int c, size_t len)
-{
-	char* pb = (char*)b;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/07 15:08:02 by yujung            #+#    #+#             */
+/*   Updated: 2021/01/07 15:08:39 by yujung           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	char *pb;
+
+	pb = (char*)b;
 	while (len--)
 		pb[len] = c;
 	return (b);
 }
-

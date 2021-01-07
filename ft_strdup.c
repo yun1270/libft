@@ -1,9 +1,21 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/07 15:17:12 by yujung            #+#    #+#             */
+/*   Updated: 2021/01/07 15:18:13 by yujung           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strdup(const char *s1)
+#include "libft.h"
+
+char		*ft_strdup(const char *s1)
 {
-	char *ar;
-	int i;
+	char	*ar;
+	int		i;
 
 	if (!(ar = malloc(sizeof(char) * ft_strlen(s1))))
 		return (NULL);

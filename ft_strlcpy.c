@@ -1,7 +1,21 @@
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/07 15:22:07 by yujung            #+#    #+#             */
+/*   Updated: 2021/01/07 15:24:20 by yujung           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t src_size;	
-	size_t i;
+	size_t	src_size;
+	size_t	i;
 
 	src_size = 0;
 	i = 0;
