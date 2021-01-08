@@ -6,7 +6,7 @@
 /*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 14:49:56 by yujung            #+#    #+#             */
-/*   Updated: 2021/01/07 15:54:59 by yujung           ###   ########.fr       */
+/*   Updated: 2021/01/08 20:23:36 by yujung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,9 @@ int					count(int n)
 
 	i = 0;
 	num = n;
-	if (n == 0)
-		return (1);
 	if (n < 0)
 	{
-		num *= (-1);
+		num *= -1;
 		i++;
 	}
 	while (num != 0)
@@ -43,7 +41,7 @@ char				*ft_itoa(int n)
 
 	i = count(n);
 	num = n;
-	if (!(str = malloc(sizeof(char))))
+	if (!(str = malloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	str[i] = '\0';
 	if (n < 0)

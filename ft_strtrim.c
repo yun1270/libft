@@ -6,7 +6,7 @@
 /*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 15:30:57 by yujung            #+#    #+#             */
-/*   Updated: 2021/01/07 15:32:02 by yujung           ###   ########.fr       */
+/*   Updated: 2021/01/08 17:55:17 by yujung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	start = 0;
 	end = ft_strlen(s1);
-	if (!(str = malloc(sizeof(char))))
+	if (!(str = malloc(sizeof(char) * (ft_strlen(s1) + 1))))
 		return (0);
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;

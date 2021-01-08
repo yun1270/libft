@@ -6,7 +6,7 @@
 /*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 15:18:40 by yujung            #+#    #+#             */
-/*   Updated: 2021/01/07 15:18:41 by yujung           ###   ########.fr       */
+/*   Updated: 2021/01/08 17:54:15 by yujung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 
 	i = 0;
-	if (!(str = malloc(sizeof(char))))
+	if (!(str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
 		return (NULL);
 	while (*s1)
 		str[i++] = *s1++;
