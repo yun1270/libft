@@ -6,12 +6,11 @@
 /*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 14:49:56 by yujung            #+#    #+#             */
-/*   Updated: 2021/01/08 20:23:36 by yujung           ###   ########.fr       */
+/*   Updated: 2021/01/08 21:46:12 by yujung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int					count(int n)
 {
@@ -20,6 +19,8 @@ int					count(int n)
 
 	i = 0;
 	num = n;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
 		num *= -1;
@@ -38,23 +39,25 @@ char				*ft_itoa(int n)
 	char			*str;
 	int				i;
 	unsigned int	num;
+	int				sign;
 
 	i = count(n);
 	num = n;
+	sign = 1;
 	if (!(str = malloc(sizeof(char) * (i + 1))))
 		return (NULL);
-	str[i] = '\0';
+	str[i--] = '\0';
 	if (n < 0)
 	{
-		str[0] = '-';
+		sign = -1;
 		num *= (-1);
 	}
-	while (i-- >= 0)
+	while (i >= 0)
 	{
-		if (i == 0 && str[0] == '-')
-			break ;
-		str[i] = (num % 10) + '0';
+		str[i--] = (num % 10) + '0';
 		num /= 10;
 	}
+	if (sign == -1)
+		str[0] = '-';
 	return (str);
 }
