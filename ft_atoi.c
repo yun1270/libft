@@ -20,28 +20,24 @@ int	is_space(char ch)
 
 int	ft_atoi(const char *str)
 {
-	unsigned int	ans;
+	unsigned long long	ans;
 	int				sign;
-	char			*s;
 
 	ans = 0;
 	sign = 1;
-	s = (char *)str;
-	while (is_space(*s))
-		s++;
-	if (*s == '-' || *s == '+')
+	while (*str && is_space(*str))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		if (*s == '-')
-			sign = -1;
-		s++;
+		if (*str == '-')
+			sign *= -1;
+		str++;
 	}
-	while (*s)
+	while ('0' <= *str && *str <= '9')
 	{
-		if ('0' <= *s && *s <= '9')
-			ans = ans * 10 + (*s - '0');
-		else
-			break ;
-		s++;
+		ans *= 10;
+		ans += (*str - '0');
+		str++;
 	}
-	return (sign * ans);
+	return (ans * sign);
 }

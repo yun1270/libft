@@ -26,6 +26,6 @@ char		*ft_strrchr(const char *s, int c)
 		str++;
 	}
 	if (*str == c)
-		return (str);
+		an = str;
 	return (an);
 }

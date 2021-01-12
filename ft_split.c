@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int			count(char const *s, char c)
+static int		count(char const *s, char c)
 {
 	int		i;
 	int		n;
@@ -35,7 +35,7 @@ int			count(char const *s, char c)
 	return (n);
 }
 
-int			count_c(char const *s, char c, int i)
+static int		count_c(char const *s, char c, int i)
 {
 	int		n;
 
@@ -45,7 +45,7 @@ int			count_c(char const *s, char c, int i)
 	return (n);
 }
 
-char		**get_str(char **str, char const *s, char c, int n)
+static char	**get_str(char **str, char const *s, char c, int n)
 {
 	int		i;
 	int		j;

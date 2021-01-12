@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int					count(int n)
+static int				count(int n)
 {
 	int				i;
 	unsigned int	num;
