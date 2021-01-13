@@ -6,7 +6,7 @@
 /*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 15:28:33 by yujung            #+#    #+#             */
-/*   Updated: 2021/01/07 16:21:00 by yujung           ###   ########.fr       */
+/*   Updated: 2021/01/13 18:47:00 by yujung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t n_len;
+	size_t	n_len;
 	char	*h;
 	char	*n;
 

@@ -6,13 +6,13 @@
 /*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 14:49:56 by yujung            #+#    #+#             */
-/*   Updated: 2021/01/08 21:46:12 by yujung           ###   ########.fr       */
+/*   Updated: 2021/01/13 18:47:21 by yujung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int				count(int n)
+static int			count(int n)
 {
 	int				i;
 	unsigned int	num;

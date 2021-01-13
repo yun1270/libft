@@ -6,7 +6,7 @@
 /*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 15:10:33 by yujung            #+#    #+#             */
-/*   Updated: 2021/01/07 15:54:30 by yujung           ###   ########.fr       */
+/*   Updated: 2021/01/13 18:48:59 by yujung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static int		count(char const *s, char c)
 {
-	int		i;
-	int		n;
-	int		st;
+	int			i;
+	int			n;
+	int			st;
 
 	n = 0;
 	i = 0;
@@ -37,7 +37,7 @@ static int		count(char const *s, char c)
 
 static int		count_c(char const *s, char c, int i)
 {
-	int		n;
+	int			n;
 
 	n = 0;
 	while (s[i] != c && s[i++])
@@ -45,11 +45,11 @@ static int		count_c(char const *s, char c, int i)
 	return (n);
 }
 
-static char	**get_str(char **str, char const *s, char c, int n)
+static char		**get_str(char **str, char const *s, char c, int n)
 {
-	int		i;
-	int		j;
-	int		k;
+	int			i;
+	int			j;
+	int			k;
 
 	i = 0;
 	j = 0;
@@ -73,10 +73,10 @@ static char	**get_str(char **str, char const *s, char c, int n)
 	return (str);
 }
 
-char		**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
-	char	**str;
-	int		n;
+	char		**str;
+	int			n;
 
 	if (s == NULL)
 		return (NULL);

@@ -6,19 +6,19 @@
 /*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 15:09:31 by yujung            #+#    #+#             */
-/*   Updated: 2021/01/07 15:09:32 by yujung           ###   ########.fr       */
+/*   Updated: 2021/01/13 18:48:16 by yujung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void				ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	nbr;
 
 	nbr = n;
 	if (n == -2147483648)
-		ft_putstr_fd("-2147483648",fd);
+		ft_putstr_fd("-2147483648", fd);
 	else
 	{
 		if (n < 0)

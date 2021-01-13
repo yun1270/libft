@@ -6,20 +6,20 @@
 /*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 15:07:04 by yujung            #+#    #+#             */
-/*   Updated: 2021/01/07 15:07:39 by yujung           ###   ########.fr       */
+/*   Updated: 2021/01/13 18:44:56 by yujung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void				*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *d;
-	unsigned char *s;
-	size_t i;
+	unsigned char	*d;
+	unsigned char	*s;
+	size_t			i;
 
 	if (!dst && !src)
-		return (0);	
+		return (0);
 	i = 0;
 	d = (unsigned char*)dst;
 	s = (unsigned char*)src;
