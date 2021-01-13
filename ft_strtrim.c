@@ -6,7 +6,7 @@
 /*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 15:30:57 by yujung            #+#    #+#             */
-/*   Updated: 2021/01/08 17:55:17 by yujung           ###   ########.fr       */
+/*   Updated: 2021/01/13 19:03:49 by yujung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 
-	if (s1 == 0 || set == 0)
+	if (!s1 || !set)
 		return (0);
 	start = 0;
 	end = ft_strlen(s1);
