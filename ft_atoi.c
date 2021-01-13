@@ -10,22 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_space(char ch)
-{
-	if (ch == ' ' || ch == '\t' || ch == '\n'
-			|| ch == '\v' || ch == '\f' || ch == '\r')
-		return (1);
-	return (0);
-}
-
 int	ft_atoi(const char *str)
 {
 	unsigned long long	ans;
 	int				sign;
 
+	if (*str == 0)
+		return (0);
 	ans = 0;
 	sign = 1;
-	while (*str && is_space(*str))
+	while (*str == ' ' || *str == '\t' || *str == '\n'
+			|| *str == '\v' || *str == '\f' || *str == '\r')
 		str++;
 	if (*str == '-' || *str == '+')
 	{
@@ -33,11 +28,12 @@ int	ft_atoi(const char *str)
 			sign *= -1;
 		str++;
 	}
-	while ('0' <= *str && *str <= '9')
+	while (*str && ('0' <= *str && *str <= '9'))
 	{
-		ans *= 10;
-		ans += (*str - '0');
+		ans = ans * 10 + (*str - '0');
 		str++;
 	}
+	if (ans > 9223372036854775807)
+		return (sign == -1) ? 0 : -1;
 	return (ans * sign);
 }
