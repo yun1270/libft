@@ -48,3 +48,23 @@ OBJS = $(SRCS:.c=.o)
 OBJS_B = $(SRCS_B:.c=.o)
 
 all : $(NAME)
+
+$(NAME) : $(OBJS)
+		ar rc $@ $^
+
+$(OBJS) : $(SRCS)
+		$(CC) $(CFLAGS) -c $(SRCS)
+
+$(OBJS_B) : $(SRCS)
+		$(CC) $(CFLAGS) -c $(SRCS_B)
+
+clean :
+		rm -rf $(OBJS) $(OBJS_B)
+
+fclean : clean
+		rm -rf $(NAME)
+
+bonus : fclean $(OBJS) $(OBJS_B)
+		ar rc $(NAME) $(OBJS) $(OBJS_B)
+
+re : fclean all
