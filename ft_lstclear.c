@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/07 15:28:33 by yujung            #+#    #+#             */
-/*   Updated: 2021/01/14 01:05:15 by yujung           ###   ########.fr       */
+/*   Created: 2021/01/13 22:36:12 by yujung            #+#    #+#             */
+/*   Updated: 2021/01/13 22:39:37 by yujung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
+void		ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t	n_len;
-	char	*h;
-	char	*n;
+	t_list	*a;
+	t_list	*b;
 
-	n_len = ft_strlen(needle);
-	n = (char *)needle;
-	h = (char *)haystack;
-	if (*needle == '\0')
-		return ((char *)haystack);
-	while (*h && len-- >= n_len)
+	if (!lst)
+		return ;
+	b = *lst;
+	while (b)
 	{
-		if (*h == *n && ft_strncmp(h, n, n_len) == 0)
-			return ((char *)h);
-		h++;
+		a = b->next;
+		ft_lstdelone(b, del);
+		b = a;
 	}
-	return (NULL);
+	*lst = NULL;
 }
