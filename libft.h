@@ -1,25 +1,13 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/07 15:50:59 by yujung            #+#    #+#             */
-/*   Updated: 2021/06/25 16:34:01 by yujung           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}					t_list;
+}	t_list;
 
 int					ft_isalpha(int c);
 int					ft_isalnum(int c);
