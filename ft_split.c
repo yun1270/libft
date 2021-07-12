@@ -1,22 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/07 15:10:33 by yujung            #+#    #+#             */
-/*   Updated: 2021/01/13 18:48:59 by yujung           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-static int		count(char const *s, char c)
+static int	count(char const *s, char c)
 {
-	int			i;
-	int			n;
-	int			st;
+	int		i;
+	int		n;
+	int		st;
 
 	n = 0;
 	i = 0;
@@ -35,7 +23,7 @@ static int		count(char const *s, char c)
 	return (n);
 }
 
-static int		count_c(char const *s, char c, int i)
+static int	count_c(char const *s, char c, int i)
 {
 	int			n;
 
@@ -45,7 +33,7 @@ static int		count_c(char const *s, char c, int i)
 	return (n);
 }
 
-static char		**get_str(char **str, char const *s, char c, int n)
+static char	**get_str(char **str, char const *s, char c, int n)
 {
 	int			i;
 	int			j;
@@ -58,7 +46,8 @@ static char		**get_str(char **str, char const *s, char c, int n)
 		k = 0;
 		while (s[i] == c)
 			i++;
-		if (!(str[j] = malloc(sizeof(char) * count_c(s, c, i) + 1)))
+		str[j] = malloc(sizeof(char) * count_c(s, c, i) + 1);
+		if (!str[j])
 		{
 			while (j > 0)
 				free((void *)str[j--]);
@@ -73,7 +62,7 @@ static char		**get_str(char **str, char const *s, char c, int n)
 	return (str);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char		**str;
 	int			n;
@@ -81,7 +70,8 @@ char			**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	n = count(s, c);
-	if (!(str = malloc(sizeof(char *) * (n + 1))))
+	str = malloc(sizeof(char *) * (n + 1));
+	if (!str)
 		return (NULL);
 	return (get_str(str, s, c, n));
 }

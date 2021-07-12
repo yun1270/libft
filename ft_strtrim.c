@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yujung <yujung@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/07 15:30:57 by yujung            #+#    #+#             */
-/*   Updated: 2021/01/13 19:03:49 by yujung           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	int		start;
@@ -26,7 +14,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (end - 1 > start && ft_strchr(set, s1[end - 1]))
 		end--;
-	if (!(str = malloc(sizeof(char) * (end - start + 1))))
+	str = malloc(sizeof(char) * (end - start + 1));
+	if (!str)
 		return (0);
 	ft_strlcpy(str, s1 + start, end - start + 1);
 	return (str);
